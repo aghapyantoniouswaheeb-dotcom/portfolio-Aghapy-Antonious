@@ -19,6 +19,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#code-samples">Code Samples</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -93,7 +94,65 @@
         </div>
     </section>
 
-    <!-- Certifications Section (مكتفي بشهادة CIB فقط) -->
+    <!-- Code Samples Section (قسم الأكواد: الجافا لوحدها والسي++ لوحدها تحت بعض) -->
+    <section id="code-samples" class="projects" style="background-color: #1e293b;">
+        <h2>Code Samples</h2>
+        <div class="projects-grid" style="display: flex; flex-direction: column; gap: 2rem; max-width: 800px; margin: 0 auto;">
+            
+            <!-- Java Code Box -->
+            <div class="project-card" style="width: 100%; text-align: left;">
+                <h3 style="color: #38bdf8; margin-bottom: 0.5rem;"><i class="fab fa-java"></i> Java Code Sample (Employee Management)</h3>
+                <p style="margin-bottom: 1rem; font-size: 0.95rem;">Demonstrating OOP principles, constructors, and encapsulation in Java.</p>
+                <div style="background-color: #0f172a; padding: 1.2rem; border-radius: 8px; overflow-x: auto;">
+                    <pre style="color: #38bdf8; font-family: monospace; font-size: 0.9rem; margin: 0;"><code>public class Employee {
+    private String name;
+    private double salary;
+
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    public void showDetails() {
+        System.out.println("Employee Name: " + name);
+        System.out.println("Salary: $" + salary);
+    }
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- C++ Code Box -->
+            <div class="project-card" style="width: 100%; text-align: left;">
+                <h3 style="color: #38bdf8; margin-bottom: 0.5rem;"><i class="fas fa-code"></i> C++ Code Sample (Supermarket System)</h3>
+                <p style="margin-bottom: 1rem; font-size: 0.95rem;">Demonstrating classes, objects, and item display logic in C++.</p>
+                <div style="background-color: #0f172a; padding: 1.2rem; border-radius: 8px; overflow-x: auto;">
+                    <pre style="color: #38bdf8; font-family: monospace; font-size: 0.9rem; margin: 0;"><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Item {
+public:
+    string name;
+    double price;
+
+    void display() {
+        cout << "Item: " << name << " | Price: $" << price << endl;
+    }
+};
+
+int main() {
+    Item item1;
+    item1.name = "Milk";
+    item1.price = 25.0;
+    item1.display();
+    return 0;
+}</code></pre>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
     <section id="certifications" class="certifications">
         <h2>Certifications & Training</h2>
         <div class="projects-grid">
@@ -101,7 +160,6 @@
                 <h3>Generative AI & Banking Program</h3>
                 <p><strong>CIB (Commercial International Bank)</strong></p>
                 <p>Completed training modules focused on generative AI applications, retail banking ecosystems, financial inclusion, and customer experience.</p>
-                <!-- لو اسم الملف على جيت هب cib-cert.pdf.pdf سيبيه كده، ولو ظبطيه وخلينيه cib-cert.pdf شيلي الـ pdf الزيادة -->
                 <a href="cib-cert.pdf.pdf" target="_blank">View Certificate <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
