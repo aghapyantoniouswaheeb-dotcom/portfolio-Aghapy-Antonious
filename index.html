@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aghapy Antonious | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome Icons for Socials -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -22,6 +21,8 @@
                 <li><a href="#code-samples">Code Samples</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <!-- زرار تبديل الوضع -->
+                <li><button id="theme-toggle" style="background: none; border: none; color: var(--text-color); cursor: pointer; font-size: 1.1rem;"><i class="fas fa-moon"></i></button></li>
             </ul>
         </nav>
     </header>
@@ -94,61 +95,35 @@
         </div>
     </section>
 
-    <!-- Code Samples Section (قسم الأكواد: الجافا لوحدها والسي++ لوحدها تحت بعض) -->
-    <section id="code-samples" class="projects" style="background-color: #1e293b;">
+    <!-- Code Samples Section -->
+    <section id="code-samples" class="projects code-section">
         <h2>Code Samples</h2>
         <div class="projects-grid" style="display: flex; flex-direction: column; gap: 2rem; max-width: 800px; margin: 0 auto;">
-            
-            <!-- Java Code Box -->
             <div class="project-card" style="width: 100%; text-align: left;">
-                <h3 style="color: #38bdf8; margin-bottom: 0.5rem;"><i class="fab fa-java"></i> Java Code Sample (Employee Management)</h3>
-                <p style="margin-bottom: 1rem; font-size: 0.95rem;">Demonstrating OOP principles, constructors, and encapsulation in Java.</p>
-                <div style="background-color: #0f172a; padding: 1.2rem; border-radius: 8px; overflow-x: auto;">
+                <h3 style="color: #38bdf8; margin-bottom: 0.5rem;"><i class="fab fa-java"></i> Java Code Sample</h3>
+                <div style="background-color: var(--code-bg); padding: 1.2rem; border-radius: 8px; overflow-x: auto;">
                     <pre style="color: #38bdf8; font-family: monospace; font-size: 0.9rem; margin: 0;"><code>public class Employee {
     private String name;
     private double salary;
-
     public Employee(String name, double salary) {
         this.name = name;
         this.salary = salary;
     }
-
-    public void showDetails() {
-        System.out.println("Employee Name: " + name);
-        System.out.println("Salary: $" + salary);
-    }
 }</code></pre>
                 </div>
             </div>
-
-            <!-- C++ Code Box -->
             <div class="project-card" style="width: 100%; text-align: left;">
-                <h3 style="color: #38bdf8; margin-bottom: 0.5rem;"><i class="fas fa-code"></i> C++ Code Sample (Supermarket System)</h3>
-                <p style="margin-bottom: 1rem; font-size: 0.95rem;">Demonstrating classes, objects, and item display logic in C++.</p>
-                <div style="background-color: #0f172a; padding: 1.2rem; border-radius: 8px; overflow-x: auto;">
+                <h3 style="color: #38bdf8; margin-bottom: 0.5rem;"><i class="fas fa-code"></i> C++ Code Sample</h3>
+                <div style="background-color: var(--code-bg); padding: 1.2rem; border-radius: 8px; overflow-x: auto;">
                     <pre style="color: #38bdf8; font-family: monospace; font-size: 0.9rem; margin: 0;"><code>#include &lt;iostream&gt;
 using namespace std;
-
 class Item {
 public:
     string name;
     double price;
-
-    void display() {
-        cout << "Item: " << name << " | Price: $" << price << endl;
-    }
-};
-
-int main() {
-    Item item1;
-    item1.name = "Milk";
-    item1.price = 25.0;
-    item1.display();
-    return 0;
-}</code></pre>
+};</code></pre>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -181,5 +156,21 @@ int main() {
         <p>© 2026 Aghapy Antonious. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript لتبديل الألوان -->
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        const icon = toggleBtn.querySelector('i');
+
+        toggleBtn.addEventListener('click', () => {
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+    </script>
 </body>
 </html>
